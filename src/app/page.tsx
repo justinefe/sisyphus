@@ -1,13 +1,12 @@
-// components/Navbar.tsx
 import Logo from "@/asset/icons/Logo";
 import WebLink from "@/components/nav/WebLink";
 import Link from "next/link";
 
 const mobileArr = [
   { title: "Exchange", href: "/dashboard/exchange" },
-  { title: "Wallets", href: "/dashboard/wallets" },
-  { title: "Roqqu Hub", href: "/dashboard/hub" },
-  { title: "Logout", href: "/dashboard/logut" },
+  { title: "Wallets", href: "/" },
+  { title: "Roqqu Hub", href: "/" },
+  { title: "Logout", href: "/" },
 ];
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
               <span className="text-[#FFFFFF] ">Sisyphus</span>
             </div>
           </Link>
-          {/* <div className="flex border-[#FCFCFC14] border-r bg-[#A7B1BC] h-[40px]" /> */}
           <div className="space-x-1 hidden md:flex gap-12">
             {mobileArr?.slice(0, 1).map(({ title, href }, index) => (
               <WebLink title={title} href={href} key={index} />
