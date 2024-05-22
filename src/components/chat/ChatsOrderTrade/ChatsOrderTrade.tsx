@@ -6,27 +6,7 @@ import ExchangeComp from "@/components/Exchange/Exchange";
 import Order from "@/components/Exchange/OrderRecentComp/Order";
 import Recent from "@/components/Exchange/OrderRecentComp/Recent";
 import Chat from "@/components/Exchange/OrderRecentComp/Chat";
-
-interface ITab {
-  title: string;
-  tab: string;
-  handleClick: any;
-  type: string;
-}
-const Tab = ({ title, tab, handleClick, type }: ITab) => {
-  return (
-    <button
-      onClick={(e) => handleClick(e, type)}
-      className={`shadow shadow-[bb]  h-[28px] w-full ${
-        tab === type
-          ? "bg-[#262932] text-[#FFFFFF] rounded-lg "
-          : "bg-[#0000001F] text-[#A7B1BC]"
-      } font-medium text-[12px]`}
-    >
-      {title}
-    </button>
-  );
-};
+import Tab from "./Tab";
 
 const tabArr = [
   { title: "Chats", type: "chat" },
@@ -66,13 +46,11 @@ const ChatsOrderTrade = () => {
   };
 
   const handleClick = (e: any, type: string) => {
-    // e.preventDefault();
     setTab(type);
   };
-  // console.log("first", tabArr);
   return (
-    <div className="flex w-full bg-[#20252B] border-[#262932] border rounded-lg  grow flex-col  p-4">
-      <div className="flex bg-[#00000029] w-full h-8 p-[2px] rounded-lg items-center">
+    <div className="flex w-full bg-[#20252B] border-[#262932] h-full min-h-[561px]  border rounded-lg  grow flex-col  p-4">
+      <div className="flex bg-[#00000029] w-full h-8 p-[2px] mb-4 rounded-lg items-center md:hidden">
         {tabArr?.map(({ title, type }, id) => (
           <Tab
             title={title}
@@ -83,6 +61,7 @@ const ChatsOrderTrade = () => {
           />
         ))}
       </div>
+      {renderJSX()}
       <div className="flex  md:hidden gap-4 w-full  h-16 items-center ">
         <button
           onClick={(e) => openModal(e, "buy")}
@@ -97,10 +76,11 @@ const ChatsOrderTrade = () => {
           Sell
         </button>
       </div>
-      {renderJSX()}
-      <Modal show={showModal} onClose={closeModal}>
-        <ExchangeComp type={type} setType={setType} />
-      </Modal>
+      <div className="flex md:hidden">
+        <Modal show={showModal} onClose={closeModal}>
+          <ExchangeComp type={type} setType={setType} />
+        </Modal>
+      </div>
     </div>
   );
 };

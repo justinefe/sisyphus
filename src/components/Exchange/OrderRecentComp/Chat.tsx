@@ -25,19 +25,22 @@ function TradingViewWidget() {
           "support_host": "https://www.tradingview.com"
         }`;
     container.current.appendChild(script);
+    return () => {
+      container?.current?.removeChild(script);
+    };
   }, []);
 
   return (
     <div
       className="tradingview-widget-container "
       ref={container}
-      style={{ height: "561px", width: "100%" }}
+      style={{ height: "100%", width: "100%" }}
     >
       <div
         className="tradingview-widget-container__widget"
         style={{ height: "calc(100% - 32px)", width: "100%" }}
       ></div>
-      <div className="tradingview-widget-copyright">
+      {/* <div className="tradingview-widget-copyright">
         <a
           href="https://www.tradingview.com/"
           rel="noopener nofollow"
@@ -45,7 +48,7 @@ function TradingViewWidget() {
         >
           <span className="blue-text">Track all markets on TradingView</span>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }

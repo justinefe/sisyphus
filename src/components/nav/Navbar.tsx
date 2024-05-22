@@ -19,12 +19,14 @@ const mobileArr = [
 
 const Navbar = () => {
   return (
-    <nav className="border-[#262932] border-b bg-[#1C2127] h-[72px] text-white sticky top-0 z-50 flex p-4 justify-between items-center">
+    <nav className="border-[#262932] border-b h-[72px] text-white sticky top-0 z-50 flex p-4 justify-between items-center">
       <div className="flex items-center gap-12">
-        <div className="flex  gap-2 items-center pr-12 border-[#FCFCFC14] md:border-r">
-          <Logo />
-          <span className="text-[#FFFFFF] ">Sisyphus</span>
-        </div>
+        <Link href="/">
+          <div className="flex  gap-2 items-center pr-12 border-[#FCFCFC14] md:border-r">
+            <Logo />
+            <span className="text-[#FFFFFF] ">Sisyphus</span>
+          </div>
+        </Link>
         {/* <div className="flex border-[#FCFCFC14] border-r bg-[#A7B1BC] h-[40px]" /> */}
         <div className="space-x-1 hidden md:flex gap-12">
           {mobileArr?.slice(0, 3).map(({ title, href }, index) => (

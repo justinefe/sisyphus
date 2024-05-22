@@ -8,7 +8,7 @@ import ArrowUp from "@/asset/icons/ArrowUp";
 
 const Order = () => {
   return (
-    <div className="flex grow flex-col bg-[#20252B] border-[#262932] border rounded-lg px-2 py-3 h-[561px] w-full max-w-[245px]">
+    <div className="flex grow flex-col bg-[#20252B] border-[#262932] border rounded-lg px-2 py-3 h-[561px] w-full ">
       <div className="flex mt-3 justify-between">
         <div className="flex">
           <div className="flex items-center justify-center h-8 w-8 bg-[#353945] rounded">

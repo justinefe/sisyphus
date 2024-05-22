@@ -22,7 +22,7 @@ const Exchange = ({
     setType(type);
   };
   return (
-    <div className="flex gap-4 flex-col">
+    <div className="flex gap-4 flex-col h-full min-h-[700px]">
       <div className="flex bg-[#00000029] gap-4 h-8 p-[2px] rounded-lg items-center justify-between">
         <button
           onClick={(e) => handleClick(e, "buy")}
