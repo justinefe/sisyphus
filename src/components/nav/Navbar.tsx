@@ -67,8 +67,8 @@ const Navbar = () => {
           </button>
           {show && (
             <ClickAwayListener onClickAway={handleClickAway}>
-              <div className="absolute right-0 top-[60px]">
-                <div className="flex flex-col grow bg-[#1C2127] border-[#373B3F] rounded-xl border px-3 py-2 w-[214px]">
+              <div className="absolute right-0 top-[60px] ">
+                <div className="flex flex-col grow bg-[#1C2127] border-[#373B3F] rounded-xl border px-3 py-2 w-[214px] ">
                   {mobileArr?.map(({ title, href }, index) => (
                     <MobileLink title={title} href={href} key={index} />
                   ))}
